@@ -1,6 +1,3 @@
-#ignore design files
-/design
-
 #ignore app icons for now
 /*.png
 favicon.ico
