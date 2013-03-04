@@ -1,0 +1,12 @@
+#ignore design files
+/design
+
+#ignore app icons for now
+/*.png
+favicon.ico
+
+#ignore mac files
+.DS_Store
+
+*.backup.*
+/css/.sass-cache/
