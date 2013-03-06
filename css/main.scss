@@ -11,6 +11,7 @@
 $white: #fefefe;
 $darkGrey: #2b2b2b;
 $bgColor: #1f1e0b;
+$orange: #77381a;
 
 @mixin text-glow($color) {
     text-shadow: 0px 0px 8px $color;
@@ -37,10 +38,7 @@ textarea {
     color: #222;
 }
 
-body {
-    font-size: 1em;
-    line-height: 1.4;
-}
+
 
 ::-moz-selection {
     background: #b3d4fc;
@@ -85,6 +83,13 @@ textarea {
 /* ====================
     Typography
     ===================*/
+body {
+    font-size: 1em;
+    line-height: 1.4;
+    font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: $darkGrey;
+}
+
 
 h1 {
     @include text-glow(#555);
@@ -109,7 +114,20 @@ h3 {
     font-size: 1.2em;
 }
 
+h4 {
+    color: $orange;
+    font-family: 'Droid Serif', serif;
+    font-weight: 400;
+    font-size: 1.2em;
+    margin-bottom:0.2em;
+}
 
+h5 {
+    color: $darkGrey;
+    font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    margin-top: 0;
+}
 
 /*=========================
   Advanced Checkbox Hack 
@@ -269,13 +287,17 @@ nav a:visited {
 }
 
 .skillSection section {
+    text-align: center;
+    margin-bottom: 2em;
     //float:left;
     //width:100%;
 }
 
 .skillSection section img {
-    width:100%;
-    background:#f00;
+    width:60%; 
+    position: relative;
+    display: block; 
+    margin: 0px auto;
 }
 
 .projectSection header {
@@ -283,9 +305,29 @@ nav a:visited {
     margin-top: 1em;
 }
 
-.projectSection section img{
-    background:#f00;
-    width:100%;
+.projectSection ul {
+    padding: 0;
+}
+
+.projectSection ul li{
+    list-style: none;
+}
+
+// .projectSection ul li:last-child a{
+//     margin-bottom: 0;
+// }
+
+.projectContainer {
+    color: $darkGrey;
+    display:block;
+    margin: 0 0 60px 0;
+    text-decoration: none;
+}
+
+.projectContainer img{
+    width:95%;
+    background:$darkGrey;
+    border: 10px solid $darkGrey;
 }
 
 .footer-container {
@@ -537,25 +579,25 @@ h2 {
         float:left;
         width:32%;
         margin:2% 2% 2% 0;
-
-        background: #0f0;
     }
 
     .skillSection section:last-child  {
-        background: #00f;
         margin-right: 0;        
         padding-right: 0;
     }
 
-    .projectSection section img {
-        width:40%;
-        float:left;
+    .projectContainer {
+        margin: 0 0 5% 0;
+    }
+
+    .projectContainer img {
+        width:50%;
     }
 
     .projectDescription {
-        width:52%;
-        float:left;
-        margin: 0 4%;
+        width:42%;
+        float:right;
+        //margin: 0 4%;
     }
 
     // .main aside {

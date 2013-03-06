@@ -15,10 +15,6 @@ select,
 textarea {
   color: #222; }
 
-body {
-  font-size: 1em;
-  line-height: 1.4; }
-
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none; }
@@ -55,6 +51,12 @@ textarea {
 /* ====================
     Typography
     ===================*/
+body {
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #2b2b2b; }
+
 h1 {
   text-shadow: 0px 0px 8px #555555;
   color: #fefefe;
@@ -74,6 +76,19 @@ h3 {
   font-family: "Droid Serif", serif;
   font-weight: 400;
   font-size: 1.2em; }
+
+h4 {
+  color: #77381a;
+  font-family: "Droid Serif", serif;
+  font-weight: 400;
+  font-size: 1.2em;
+  margin-bottom: 0.2em; }
+
+h5 {
+  color: #2b2b2b;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  margin-top: 0; }
 
 /*=========================
   Advanced Checkbox Hack 
@@ -213,17 +228,36 @@ nav a:visited {
   text-align: center;
   margin-top: 1em; }
 
+.skillSection section {
+  text-align: center;
+  margin-bottom: 2em; }
+
 .skillSection section img {
-  width: 100%;
-  background: #f00; }
+  width: 60%;
+  position: relative;
+  display: block;
+  margin: 0px auto; }
 
 .projectSection header {
   text-align: center;
   margin-top: 1em; }
 
-.projectSection section img {
-  background: #f00;
-  width: 100%; }
+.projectSection ul {
+  padding: 0; }
+
+.projectSection ul li {
+  list-style: none; }
+
+.projectContainer {
+  color: #2b2b2b;
+  display: block;
+  margin: 0 0 60px 0;
+  text-decoration: none; }
+
+.projectContainer img {
+  width: 95%;
+  background: #2b2b2b;
+  border: 10px solid #2b2b2b; }
 
 .footer-container {
   background: black;
@@ -393,22 +427,21 @@ nav a:visited {
   .skillSection section {
     float: left;
     width: 32%;
-    margin: 2% 2% 2% 0;
-    background: #0f0; }
+    margin: 2% 2% 2% 0; }
 
   .skillSection section:last-child {
-    background: #00f;
     margin-right: 0;
     padding-right: 0; }
 
-  .projectSection section img {
-    width: 40%;
-    float: left; }
+  .projectContainer {
+    margin: 0 0 5% 0; }
+
+  .projectContainer img {
+    width: 50%; }
 
   .projectDescription {
-    width: 52%;
-    float: left;
-    margin: 0 4%; } }
+    width: 42%;
+    float: right; } }
 @media only screen and (min-width: 1140px) {
   /* ===============
       Maximal Width

@@ -14,17 +14,21 @@ jQuery(document).ready(function(){
 	var textContainer = jQuery(".bannerText");
 	var bannerBG = jQuery(".banner");
 
-	//Prevent text from appearing when a refresh occurs and the page is partially scrolled
-    // textContainer.css({
-    //   'opacity' : 0
-    // });
-
 	if(!isMobile()) {
 
 		textContainer.css({'position': 'fixed'});
 		bannerBG.css({'background-attachment': 'fixed',
 					  'background-position':  'center 30px',
 					 });
+
+		
+		//Prevent text from appearing when a refresh occurs and the page is partially scrolled
+	    if(jQuery(window).scrollTop() >  
+	    	(bannerBG.height() - jQuery('.header-container').height())){
+			    textContainer.css({
+			      'opacity' : 0
+			    });
+		}
 
 	    jQuery(window).scroll(function() {
 	        var scrollPos = jQuery(this).scrollTop();
