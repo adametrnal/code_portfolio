@@ -224,6 +224,9 @@ nav a:visited {
   left: 0;
   opacity: 0.7; }
 
+/* =======================
+   Skill Section Styles
+  =======================*/
 .skillSection header {
   text-align: center;
   margin-top: 1em; }
@@ -233,11 +236,13 @@ nav a:visited {
   margin-bottom: 2em; }
 
 .skillSection section img {
-  width: 60%;
   position: relative;
   display: block;
   margin: 0px auto; }
 
+/* =======================
+   Project Section Styles
+  =======================*/
 .projectSection header {
   text-align: center;
   margin-top: 1em; }
@@ -259,14 +264,76 @@ nav a:visited {
   background: #2b2b2b;
   border: 10px solid #2b2b2b; }
 
+/* =======================
+   Footer Styles
+  =======================*/
 .footer-container {
-  background: black;
+  background: #0c0c0c;
   width: 100%;
-  margin: 0; }
+  margin: 0;
+  overflow: auto; }
 
 .footer-container footer {
-  color: white;
+  color: #fefefe; }
+
+.contactContainer {
+  float: left;
+  margin: 20px 0;
   padding: 20px 0; }
+
+.contactContainer p {
+  font-size: 1.7em;
+  line-height: 1.2em;
+  margin: 0; }
+
+.contactContainer a {
+  color: #fefefe;
+  text-decoration: none; }
+
+.socialMediaContainer {
+  margin-top: 20px; }
+
+.socialMediaIcon {
+  width: 32px;
+  height: 32px;
+  background: url("../img/sprites.png");
+  background-size: 64px 192px;
+  background-repeat: no-repeat;
+  display: block;
+  text-indent: -9999px;
+  float: left;
+  margin-right: .5em; }
+
+.linkedInIcon {
+  background-position: 0px -32px; }
+  .linkedInIcon:hover {
+    background-position: -32px -32px; }
+
+.githubIcon {
+  background-position: 0px -64px; }
+  .githubIcon:hover {
+    background-position: -32px -64px; }
+
+.fivehundredpxIcon {
+  background-position: 0px -96px; }
+  .fivehundredpxIcon:hover {
+    background-position: -32px -96px; }
+
+.facebookIcon {
+  background-position: 0px -128px; }
+  .facebookIcon:hover {
+    background-position: -32px -128px; }
+
+.emailIcon {
+  background-position: 0px -160px; }
+  .emailIcon:hover {
+    background-position: -32px -160px; }
+
+footer img {
+  float: right;
+  width: 103px;
+  padding: 42px 0;
+  display: none; }
 
 /* ===============
     ALL: IE Fixes
@@ -310,6 +377,9 @@ nav a:visited {
   .lineBreak:before {
     width: 32%; }
 
+  footer img {
+    display: block; }
+
   /* ========================
       INTERMEDIATE: IE Fixes
      ======================== */
@@ -334,7 +404,7 @@ nav a:visited {
     width: 32px;
     height: 32px;
     background: url("../img/sprites.png");
-    background-size: 128px;
+    background-size: 64px 192px;
     background-position: 0px 0px;
     position: absolute;
     right: 6%;
@@ -432,6 +502,9 @@ nav a:visited {
   .skillSection section:last-child {
     margin-right: 0;
     padding-right: 0; }
+
+  .skillSection section img {
+    width: 60%; }
 
   .projectContainer {
     margin: 0 0 5% 0; }

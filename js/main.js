@@ -14,8 +14,10 @@ jQuery(document).ready(function(){
 	var textContainer = jQuery(".bannerText");
 	var bannerBG = jQuery(".banner");
 
+
 	if(!isMobile()) {
 
+		//We only want BG parallax on desktop because mobile devices don't get the scroll event
 		textContainer.css({'position': 'fixed'});
 		bannerBG.css({'background-attachment': 'fixed',
 					  'background-position':  'center 30px',
@@ -30,6 +32,7 @@ jQuery(document).ready(function(){
 			    });
 		}
 
+		//Create some parallax effects
 	    jQuery(window).scroll(function() {
 	        var scrollPos = jQuery(this).scrollTop();
 
@@ -50,4 +53,14 @@ jQuery(document).ready(function(){
 	 // 	//Fix Menu icon sizing issue on mobile devices  
 	 // 	jQuery('nav label').css({'font-size': '1.1em'});
 	 // }
+	 jQuery('nav a').click(function(event) {
+		var $anchor = $(this);
+ 
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 600 /*, default easing for now.  Need jQuery UI libryary for other options*/);
+
+        event.preventDefault();
+
+	});
 });
