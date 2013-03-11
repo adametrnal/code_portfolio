@@ -55,7 +55,10 @@ body {
   font-size: 1em;
   line-height: 1.4;
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #2b2b2b; }
+  color: #444; }
+
+body a {
+  color: inherit; }
 
 h1 {
   text-shadow: 0px 0px 8px #555555;
@@ -75,13 +78,34 @@ h3 {
   color: #2b2b2b;
   font-family: "Droid Serif", serif;
   font-weight: 400;
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  text-align: center;
+  margin: 1em 0 3em 0;
+  background: -moz-linear-gradient(top, #ababab 0%, #fefefe 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ababab), color-stop(100%, #fefefe));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ababab 0%, #fefefe 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ababab 0%, #fefefe 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ababab 0%, #fefefe 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #ababab 0%, #fefefe 100%);
+  /* W3C */
+  height: 2px; }
+
+h3 span {
+  background: url("../img/paper_fibers.jpg") repeat scroll 0% 0%;
+  padding: 20px;
+  position: relative;
+  top: -.7em; }
 
 h4 {
   color: #77381a;
   font-family: "Droid Serif", serif;
   font-weight: 400;
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin-bottom: 0.2em; }
 
 h5 {
@@ -179,6 +203,9 @@ nav ul {
   margin: 0;
   padding: 0; }
 
+nav ul li {
+  width: 100%; }
+
 nav a {
   font-family: "Droid Serif", serif;
   font-weight: 400;
@@ -202,35 +229,9 @@ nav a:visited {
 .main article h1 {
   font-size: 2em; }
 
-.lineBreak:after {
-  content: " ";
-  background: #2b2b2b;
-  width: 22%;
-  height: 1px;
-  display: block;
-  position: relative;
-  top: -2em;
-  left: 78%;
-  opacity: 0.7; }
-
-.lineBreak:before {
-  content: " ";
-  background: #2b2b2b;
-  width: 22%;
-  height: 1px;
-  display: block;
-  position: relative;
-  top: 2em;
-  left: 0;
-  opacity: 0.7; }
-
 /* =======================
    Skill Section Styles
   =======================*/
-.skillSection header {
-  text-align: center;
-  margin-top: 1em; }
-
 .skillSection section {
   text-align: center;
   margin-bottom: 2em; }
@@ -243,26 +244,38 @@ nav a:visited {
 /* =======================
    Project Section Styles
   =======================*/
-.projectSection header {
-  text-align: center;
-  margin-top: 1em; }
-
 .projectSection ul {
   padding: 0; }
 
 .projectSection ul li {
-  list-style: none; }
+  list-style: none;
+  border-bottom: 1px solid #fefefe;
+  margin: 0px 0px 30px 0px; }
+
+.projectSection ul li:last-child {
+  border-bottom: none;
+  margin-bottom: 0; }
+
+.projectSection ul li:last-child a {
+  border-bottom: none; }
 
 .projectContainer {
   color: #2b2b2b;
   display: block;
-  margin: 0 0 60px 0;
-  text-decoration: none; }
+  padding: 0 10px 30px 0;
+  text-decoration: none;
+  border-bottom: 1px solid #bbbbbb;
+  overflow: auto; }
 
 .projectContainer img {
   width: 95%;
   background: #2b2b2b;
   border: 10px solid #2b2b2b; }
+
+.projectDescription a {
+  text-decoration: none; }
+.projectDescription p a {
+  text-decoration: underline; }
 
 /* =======================
    Footer Styles
@@ -367,15 +380,8 @@ footer img {
 
   .bannerText {
     top: 8%;
-    width: 60%;
-    left: 20%; }
-
-  .lineBreak:after {
-    width: 32%;
-    left: 68%; }
-
-  .lineBreak:before {
-    width: 32%; }
+    width: 50%;
+    left: 25%; }
 
   footer img {
     display: block; }
@@ -487,17 +493,15 @@ footer img {
     float: left;
     width: 100%; }
 
-  .lineBreak:after {
-    width: 38%;
-    left: 62%; }
-
-  .lineBreak:before {
-    width: 38%; }
-
   .skillSection section {
     float: left;
-    width: 32%;
-    margin: 2% 2% 2% 0; }
+    width: 31%;
+    margin: 2% 3% 2% 0; }
+    .skillSection section p {
+      text-align: justify;
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      hyphens: auto; }
 
   .skillSection section:last-child {
     margin-right: 0;
@@ -507,18 +511,25 @@ footer img {
     width: 60%; }
 
   .projectContainer {
-    margin: 0 0 5% 0; }
+    border-right: 1px solid #bbbbbb; }
+
+  .projectSection ul li {
+    border-right: 1px solid #fefefe; }
 
   .projectContainer img {
     width: 50%; }
 
   .projectDescription {
     width: 42%;
-    float: right; } }
+    float: right;
+    margin: 0; } }
 @media only screen and (min-width: 1140px) {
   /* ===============
       Maximal Width
      =============== */
+  h4 {
+    font-size: 1.2em; }
+
   .wrapper {
     width: 1026px;
     /* 1140px - 10% for margins */

@@ -11,23 +11,24 @@ function isMobile(){
 }
 
 jQuery(document).ready(function(){
-	var textContainer = jQuery(".bannerText");
-	var bannerBG = jQuery(".banner");
+	var $textContainer = jQuery(".bannerText");
+	var $bannerBG = jQuery(".banner");
+	var $header = jQuery('.header-container');
 
 
 	if(!isMobile()) {
 
 		//We only want BG parallax on desktop because mobile devices don't get the scroll event
-		textContainer.css({'position': 'fixed'});
-		bannerBG.css({'background-attachment': 'fixed',
+		$textContainer.css({'position': 'fixed'});
+		$bannerBG.css({'background-attachment': 'fixed',
 					  'background-position':  'center 30px',
 					 });
 
 		
 		//Prevent text from appearing when a refresh occurs and the page is partially scrolled
 	    if(jQuery(window).scrollTop() >  
-	    	(bannerBG.height() - jQuery('.header-container').height())){
-			    textContainer.css({
+	    	($bannerBG.height() - $header.height())){
+			    $textContainer.css({
 			      'opacity' : 0
 			    });
 		}
@@ -37,13 +38,13 @@ jQuery(document).ready(function(){
 	        var scrollPos = jQuery(this).scrollTop();
 
 		    //Scroll and fade out the banner text
-		    textContainer.css({
+		    $textContainer.css({
 		      'margin-top' : -(scrollPos/3)+"px",
 		      'opacity' : 1-(scrollPos/300)
 		    });
 
 		    //Scroll the background of the banner
-		    bannerBG.css({
+		    $bannerBG.css({
 		      'background-position' : 'center ' + (-scrollPos/8 + 30)+"px"
 		    });  
 	    });
@@ -54,13 +55,16 @@ jQuery(document).ready(function(){
 	 // 	jQuery('nav label').css({'font-size': '1.1em'});
 	 // }
 	 jQuery('nav a').click(function(event) {
-		var $anchor = $(this);
- 
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 600 /*, default easing for now.  Need jQuery UI libryary for other options*/);
+		var newHref = jQuery(this).attr('href');
+ 		event.preventDefault();
 
-        event.preventDefault();
-
+        jQuery('html, body').stop().animate({
+            scrollTop: jQuery(newHref).offset().top
+        	}, 
+        	600, //default easing for now
+        	function(){
+        		window.location.hash = newHref;
+        	}
+        );
 	});
 });
