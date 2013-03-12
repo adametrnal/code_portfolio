@@ -67,4 +67,14 @@ jQuery(document).ready(function(){
         	}
         );
 	});
+
+	//Add last-child styles to IE 6-8
+	if(jQuery('html').hasClass('lt-ie9')){
+		jQuery('.skillSection section:last-child ').css({
+			'margin-right': 0,        
+        	'padding-right': 0
+		});
+	}
+
+
 });

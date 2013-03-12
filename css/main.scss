@@ -2,7 +2,8 @@
  Sass Imports
  ===============*/
 
-@import "normalize.css";
+@import "normalize.scss";
+@import "boilerplate.scss";
 
 /* =================
     SASS Variables
@@ -26,75 +27,23 @@ $orange: #77381a;
   background: linear-gradient(to bottom, $color1 0%, $color2 100%); /* W3C */
   //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
 }
-/* ==========================================================================
-   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
-   ========================================================================== */
-
-html,
-button,
-input,
-select,
-textarea {
-    color: #222;
-}
-
-
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-img {
-    vertical-align: middle;
-}
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-textarea {
-    resize: vertical;
-}
-
-.chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
 
 /* ====================
     Typography
     ===================*/
-
 
 body {
     font-size: 1em;
     line-height: 1.4;
     font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #444;
+    
+    a {
+        //No blue links
+        color: inherit;
+    }
 }
 
-body a {
-    color: inherit;
-}
 
 h1 {
     @include text-glow(#555);
@@ -123,13 +72,13 @@ h3 {
     //Create the line break effect
     @include gradient-bg( #ababab, rgba(254, 254, 254, 1));
     height:2px;
-}
-
-h3 span{
-    background:  url("../img/paper_fibers.jpg") repeat scroll 0% 0%;
-    padding:20px;
-    position:relative;
-    top:-.7em;
+    
+    span{
+        background:  url("../img/paper_fibers.jpg") repeat scroll 0% 0%;
+        padding:20px;
+        position:relative;
+        top:-.7em;
+    }
 }
 
 
@@ -148,9 +97,11 @@ h5 {
     margin-top: 0;
 }
 
-/*=========================
-  Advanced Checkbox Hack 
-==========================*/
+/*===================================
+  Checkbox Hack for Mobile Navigation
+  Thanks Tim Pietrrusky and CSS-Tricks for the idea
+  http://css-tricks.com/responsive-menu-concepts/
+====================================*/
 body { -webkit-animation: bugfix infinite 1s; }
 @-webkit-keyframes bugfix { from {padding:0;} to {padding:0;} }
 
@@ -187,7 +138,6 @@ nav[role="custom-dropdown"] {
 ================*/
 body {
     background:  url("../img/paper_fibers.jpg") repeat;
-    //font: 16px/26px Helvetica, Helvetica Neue, Arial;
 }
 
 .wrapper {
@@ -204,27 +154,24 @@ body {
     }
     z-index: 1; //fix for H1 text appearing over the menus on mobile
 
-}
-
-.header-container:before {
-    content: " ";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    @include gradient-bg(rgba(255,255,255,.2), rgba(0,0,0,0));
+    //Add a nice gradient overlay
+    &:before{
+        content: " ";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        @include gradient-bg(rgba(255,255,255,.2), rgba(0,0,0,0));
+    }
 }
 
 .banner {
-    background: url("../img/bannerImageWide2.jpg") $bgColor no-repeat center;
+    background: url("../img/bannerImageWide.jpg") $bgColor no-repeat center;
     width: 100%;
-    //background-position:  center 30px;
     overflow: hidden;
-    //background-attachment: fixed;
     height: 116px;
-    //margin-top: 20px;
 }
 
 .bannerText {
@@ -279,41 +226,14 @@ nav a:visited {
     font-size: 2em;
 }
 
-// .lineBreak:after {
-//     content: " ";
-//     background: $darkGrey;
-//     width:22%;
-//     height: 1px;
-//     display: block;
-//     position: relative;
-//     top: -2em;
-//     left: 78%;  
-//     opacity: 0.7
-// }
 
-// .lineBreak:before {
-//     content: " ";
-//     background: $darkGrey;
-//     width: 22%;
-//     height: 1px;
-//     display: block;
-//     position: relative;
-//     top: 2em;
-//     left:0;
-//     opacity: 0.7;
-    
-// }
-/* =======================
-   Skill Section Styles
-  =======================*/
-
-
+/* =========================
+  Mobile: Skill Section Styles
+  =========================*/
 
 .skillSection section {
     text-align: center;
     margin-bottom: 2em;
-    //float:left;
-    //width:100%;
 }
 
 .skillSection section img {
@@ -322,10 +242,9 @@ nav a:visited {
     margin: 0px auto;
 }
 
-/* =======================
-   Project Section Styles
-  =======================*/
-
+/* ===============================
+   Mobile: Project Section Styles
+  ===============================*/
 
 .projectSection ul {
     padding: 0;
@@ -344,26 +263,20 @@ nav a:visited {
 .projectSection ul li:last-child{
     border-bottom:none;
     margin-bottom: 0;
-}
-
-.projectSection ul li:last-child a{
-    border-bottom: none;
+    div {
+        border-bottom: none;
+    }
 }
 
 .projectContainer {
     color: $darkGrey;
     display:block;
-   // margin: 0 10px 30px 0;
     padding: 0 10px 30px 0;
     text-decoration: none;
-    //border-right: 1px solid rgb(187, 204, 187);
     border-bottom: 1px solid rgb(187, 187, 187);
     overflow: auto;
 }
 
-.projectContainer:last-child{
-    //border-bottom: none;
-}
 
 .projectContainer img{
     width:95%;
@@ -374,6 +287,7 @@ nav a:visited {
     };
 }
 
+//Underline links in the text
 .projectDescription{
     a{
         text-decoration: none;
@@ -506,10 +420,6 @@ footer img {
         margin: 0px auto;
     }
 
-    .main-container {
-      //  position: relative;
-    }
-
     .banner {
         //background: url("../img/bannerImageWide2.jpg") $bgColor center no-repeat;
         //background-color: #1f1e0b;
@@ -524,15 +434,6 @@ footer img {
         width: 50%;
         left: 25%;
     }
-
-    // .lineBreak:after {
-    //     width:32%;
-    //     left: 68%;  
-    // }
-
-    // .lineBreak:before {
-    //     width: 32%;
-    // }
 
     footer img {
         display: block;
@@ -553,6 +454,8 @@ footer img {
 
 /*======================================
    MAX Width Media Query For Mobile Nav
+   This is only query that uses Max-Width.
+   It is used to remove the checkbox-style Nav  
 ======================================*/   
 @media screen and (max-width: 767px) {
 
@@ -702,15 +605,6 @@ h2 {
         width: 100%;
     }
     
-    // .lineBreak:after {
-    //     width:38%;
-    //     left: 62%;  
-    // }
-
-    // .lineBreak:before {
-    //     width: 38%;
-    // }
-
     .skillSection section {
         float:left;
         width:31%;
@@ -728,7 +622,7 @@ h2 {
         margin-right: 0;        
         padding-right: 0;
     }
-
+    
     .skillSection section img {
         width:60%; 
     }
@@ -751,10 +645,6 @@ h2 {
         margin: 0;
     }
 
-    // .main aside {
-    //     float: right;
-    //     width: 28%;
-    // }
 }
 
 @media only screen and (min-width: 1140px) {
