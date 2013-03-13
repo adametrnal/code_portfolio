@@ -33,7 +33,7 @@ $orange: #77381a;
     ===================*/
 
 body {
-    font-size: 1em;
+    font-size: 0.9em;
     line-height: 1.4;
     font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #444;
@@ -59,6 +59,7 @@ h2 {
     font-family: 'Droid Serif', serif;
     font-weight: 400;
     font-size: .9em;
+    margin: 0 10px;
 }
 
 h3 {
@@ -91,6 +92,7 @@ h4 {
 }
 
 h5 {
+    font-size:1em;
     color: $darkGrey;
     font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
@@ -149,6 +151,8 @@ body {
     background: url("../img/debut_dark2.jpg") repeat;
     position: relative;
     img {
+        float:left;
+        max-width: 32px;
         padding: .8em 2%; 
         padding-left: 0;
     }
@@ -240,6 +244,7 @@ nav a:visited {
     position: relative;
     display: block; 
     margin: 0px auto;
+    width:30%; 
 }
 
 /* ===============================
@@ -279,9 +284,11 @@ nav a:visited {
 
 
 .projectContainer img{
+    float:left;
     width:95%;
     background:$darkGrey;
     border: 10px solid $darkGrey;
+    margin-bottom: 10px;
     &:hover{
         //nothing for now
     };
@@ -409,6 +416,7 @@ footer img {
 
     h2 {
         font-size: 1em;
+        margin: 0.83em 0;
     }
 /* ====================
     INTERMEDIATE: Menu
@@ -612,6 +620,12 @@ h2 {
         
         p{
             text-align: justify;
+
+            //word-break: break-all;
+
+            // Non standard for webkit
+            //word-break: break-word;
+
             -webkit-hyphens: auto;
             -moz-hyphens: auto;
             hyphens: auto;
@@ -637,12 +651,13 @@ h2 {
 
     .projectContainer img {
         width:50%;
+        margin-bottom: 0;
     }
 
     .projectDescription {
-        width:42%;
+        width:43%;
         float:right;
-        margin: 0;
+        margin: 0 10px 0 0;
     }
 
 }
